@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>関数ゲーム（ことばバージョン）</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        line-height: 1.8;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #fdfdfd;
+      }
+      h1,
+      h2,
+      h3 {
+        padding-left: 0.5em;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1em 0;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5em;
+        text-align: left;
+      }
+      code {
+        background: #eee;
+        padding: 0.1em 0.3em;
+        border-radius: 4px;
+      }
+      pre {
+        background: #f5f5f5;
+        padding: 1em;
+        overflow-x: auto;
+        border-left: 4px solid;
+      }
+      ul,
+      ol {
+        margin-left: 1.5em;
+      }
+      .section {
+        margin-bottom: 3em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🧠 関数ゲーム（ことばバージョン）</h1>
+
+    <div class="section">
+      <h2>🌟 ゲームの目的</h2>
+      <p>
+        関数カード（概念変換ルール）を使って、指定された「Inputの言葉」を「Outputの言葉」に変換しよう！
+      </p>
+      <p>
+        <strong>変換に成功すれば、使用した関数の枚数が得点</strong
+        >となります。最も得点を獲得したプレイヤーが勝利！
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>👥 プレイ人数</h2>
+      <ul>
+        <li>2人以上</li>
+        <li>
+          各ラウンド、時計回りにプレイヤーが「Input／Output担当」となり、他のプレイヤーが変換ルートを考えます
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🔢 関数カード一覧（使用時は番号で記述）</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>関数カード名</th>
+            <th>効果例（3つ）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><code>f(x) = xの上位概念に変換する</code></td>
+            <td>・母 → 人間　・犬 → 動物　・いちご → 果物</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><code>f(x) = xの下位概念に変換する</code></td>
+            <td>・人間 → 母　・動物 → 犬　・果物 → いちご</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><code>f(x) = xを構成する言葉に変換する</code></td>
+            <td>・機械 → ネジ　・学校 → 先生　・カレー → スパイス</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><code>f(x) = xが属している言葉に変換する</code></td>
+            <td>・ネジ → 機械　・先生 → 学校　・スパイス → カレー</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><code>f(x) = xの同類に変換する</code></td>
+            <td>・ゴリラ → 人間　・バナナ → りんご　・電車 → バス</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><code>f(x) = xと対象的な言葉に変換する</code></td>
+            <td>・白 → 黒　・猫 → 犬　・暑い → 寒い</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><code>f(x) = xから共起（連想）する言葉に変換する</code></td>
+            <td>・夏 → 海　・クリスマス → ケーキ　・本 → 図書館</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>⏪ ゲームの流れ</h2>
+
+      <h3>1. お題の決定（Input／Output）</h3>
+      <ul>
+        <li>ラウンドごとに時計回りで担当者を交代</li>
+        <li>現在のプレイヤー：<strong>Input（変換元）</strong>を決定</li>
+        <li>右隣のプレイヤー：<strong>Output（変換先）</strong>を決定</li>
+        <li>残りのプレイヤーはその変換ルートを考える</li>
+      </ul>
+
+      <h3>2. 解答の記述</h3>
+      <p>各プレイヤーは、自分の紙に以下の形式で記述：</p>
+      <pre>
+Input：りんご
+1: バナナ
+3: ゴリラ
+2: 哺乳類
+Output：哺乳類
+    </pre
+      >
+      <p>※ 数字は関数カードの番号を意味する</p>
+
+      <h3>3. 同時発表！</h3>
+      <ul>
+        <li>全員が「せーの！」で同時に紙を公開して発表</li>
+        <li>使用関数の順番と変換語を説明</li>
+      </ul>
+
+      <h3>4. 判定・得点</h3>
+      <ul>
+        <li>関数の種類制限（連続・繰り返し）のルールを守っているか？</li>
+        <li>変換が成立していると納得できるか？</li>
+        <li>使った関数の数を得点として記録</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>⚠️ 変換ルールの注意事項</h2>
+      <h3>✨ 同じ関数カードは連続で使えない</h3>
+      <ul>
+        <li>❌ NG：3 → 3</li>
+        <li>❌ NG：1 → 3 → 1（1が2つおき）</li>
+        <li>✅ OK：1 → 3 → 2 → 6（すべて異なる）</li>
+      </ul>
+
+      <h3>✨ 同じ言葉を2回以上使うのは禁止</h3>
+      <ul>
+        <li>❌ NG：りんご → 赤い → りんご</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>🏆 勝利条件</h2>
+      <p>
+        複数ラウンド行い、<strong>最も多くの得点を獲得したプレイヤー</strong>が勝利！
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>📦 必要なもの</h2>
+      <ul>
+        <li>紙とペンだけ！</li>
+      </ul>
+    </div>
+  </body>
+</html>
